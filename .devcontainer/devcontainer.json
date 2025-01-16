@@ -1,0 +1,6 @@
+{
+    "name": "Fedora 41",
+    "build": {
+        "dockerfile": "Containerfile"
+    }
+}

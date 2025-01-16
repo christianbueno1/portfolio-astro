@@ -1,0 +1,15 @@
+# FROM docker.io/library/fedora:41
+FROM quay.io/fedora/fedora:41
+
+WOKDIR /workspace
+
+COPY package.json package-lock.json ./
+
+LABEL maintainer="Christian Bueno chmabuen@espol.edu.ec"
+
+RUN dnf install -y \
+    git \
+    openssh-clients \
+    vim-enhanced \
+    curl \
+    && dnf clean all
