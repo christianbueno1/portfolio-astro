@@ -13,9 +13,10 @@ import { Image } from "astro:assets";
       <div class="flex flex-col h-full">
         <h6 class="text-sm font-light m-0 text-gray-500">welcome</h6>
         <p class="m-0 font-light text-xl">
-          Hi, I'm <b class="font-bold">Gianmarco Cavallo</b>, a software
-          developer with strong focus on the user experience, animations and
-          micro interactions
+          Welcome to my portfolio! I’m thrilled to have you here. This space showcases my work as a <b class="font-bold">Web Developer</b>, where I create dynamic and user-friendly web applications. 
+        </p>
+        <p class="m-0 font-light text-xl">
+          Feel free to explore my projects and see how technology can transform ideas into reality. If you’re interested in collaborating or have any questions, don’t hesitate to reach out!
         </p>
       </div>
       <div class="flex gap-4">
@@ -31,18 +32,19 @@ import { Image } from "astro:assets";
             <span class="sr-only">Linkedin Profile</span>
           </Button>
         </a>
-        <a href={LINKS.dribble} aria-label="dribble profile" target="_blank">
-          <Button aria-label="dribble profile">
-            <Icon name="ri:dribbble-fill" class="h-6" />
-            <span class="sr-only">Dribble Profile</span>
+        <a href={LINKS.instagram} aria-label="instagram profile" target="_blank">
+          <Button aria-label="instagram profile">
+            <Icon name="ri:instagram-line" class="h-6" />
+            <span class="sr-only">Instagram Profile</span>
           </Button>
         </a>
-        <Tooltip client:visible>
-          <Button aria-label="easter egg btn">
-            <Icon name="ri:emotion-laugh-line" class="h-6" />
-            <span class="sr-only">Easter egg button</span>
+        <a href={LINKS.whatsapp} aria-label="whatsapp profile" target="_blank">
+          <Button aria-label="whatsapp profile">
+            <Icon name="ri:whatsapp-line" class="h-6" />
+            <span class="sr-only">Whatsapp Profile</span>
           </Button>
-        </Tooltip>
+        </a>
+        
       </div>
     </div>
     <Image
