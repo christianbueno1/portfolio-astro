@@ -1,0 +1,35 @@
+---
+import { PERSONAL_INFO, BIO_INFO } from "../data";
+import Layout from "../layouts/Layout.astro";
+Layout;
+const { shortIntroduction, background, philosophy } = PERSONAL_INFO.whoYouAre;
+const { name } = PERSONAL_INFO;
+const { short } = BIO_INFO;
+---
+<script>
+  import { timeline, type TimelineDefinition } from "motion";
+  import { loaderAnimation } from "../lib/constants";
+
+  const sequence = [loaderAnimation];
+
+  timeline(sequence as TimelineDefinition);
+</script>
+
+<Layout title=`${name} - About me` description=`${short}`>
+  <main
+    class="w-screen h-screen flex flex-col justify-start items-start max-w-3xl mx-auto p-8"
+  >
+    <a
+      href="/"
+      class="text-white bg-neutral-900 hover:bg-neutral-800 px-4 py-2 mb-8 border-1 border-solid border-neutral-600 rounded-lg"
+    >
+      Back
+    </a>
+    <h1 class="text-4xl font-bold mb-4 text-neutral-100">About me</h1>
+    <p class="text-neutral-100">{shortIntroduction}</p>
+    <br>
+    <p class="text-neutral-100">{background}</p>
+    <br>
+    <p class="text-neutral-100">{philosophy}</p>
+  </main>
+</Layout>

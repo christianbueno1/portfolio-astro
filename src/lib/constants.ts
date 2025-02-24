@@ -1,15 +1,3 @@
-export const LINKS = {
-  github: "https://github.com/christianbueno1",
-  linkedin: "https://www.linkedin.com/in/christianbueno1/",
-  hashnode: "https://christianbueno.hashnode.dev/", 
-  discord: "https://discordapp.com/users/779871769938231316",
-  devto: "https://dev.to/christianbueno1/",
-  email: "hola@christianbueno.me",
-  instagram: "https://www.instagram.com/christianbueno.1/",
-  whatsapp: "https://wa.me/593990288710",
-  youtube: "https://youtube.com/@estudiamosec3876?si=iQ29QVk9DNoV_mvG"
-};
-
 export const loaderAnimation = [
   ".loader",
   { opacity: [1, 0], pointerEvents: "none" },

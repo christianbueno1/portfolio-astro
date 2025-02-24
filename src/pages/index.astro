@@ -9,6 +9,7 @@ import Now from "../components/Now.astro";
 import Globe from "../components/Globe";
 import { getCollection } from "astro:content";
 import { formatDate } from "../lib/helpers";
+import { BIO_INFO, PERSONAL_INFO } from "../data";
 
 const posts = (await getCollection("blog"))?.sort(
   (blogEntryA, blogEntryB) =>
@@ -40,8 +41,8 @@ const posts = (await getCollection("blog"))?.sort(
 </script>
 
 <Layout
-  title="Christian Bueno - Web Developer/ DevOps Engineer"
-  description="I'm Christian Bueno, a Web Developer skilled in Python, JavaScript, and TypeScript, with experience in frameworks like React, Next.js, and NestJS. As a DevOps enthusiast, I automate development processes using Terraform and Podman. I've also worked with the OpenAI API and Midjourney to enhance my projects."
+  title={PERSONAL_INFO.title}
+  description={BIO_INFO.short}
 >
   <main
     class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
@@ -54,8 +55,8 @@ const posts = (await getCollection("blog"))?.sort(
     <Card
       colSpan="md:col-span-1"
       rowSpan="md:row-span-1"
-      title="Countries I visited"
-      href="travel"
+      title="I would like to visit"
+      href="/travel"
       colorText="text-neutral-900"
     >
       <div class="h-full w-full absolute inset-0 -z-10">
@@ -89,7 +90,6 @@ const posts = (await getCollection("blog"))?.sort(
                 </time>
               )}
             </div>
-            // </a>
           ))
         }
       </div>
@@ -100,7 +100,7 @@ const posts = (await getCollection("blog"))?.sort(
           href="https://astro.build/"
           target="_blank"
           class="text-red-500">Astro</a
-        > by Christian Bueno.
+        > by {PERSONAL_INFO.name}.
       </p>
     </Card>
   </main>

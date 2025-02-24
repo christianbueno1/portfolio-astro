@@ -1,5 +1,5 @@
 ---
-import { LINKS } from "../lib/constants";
+import { PERSONAL_INFO } from "../data";
 
 interface Props {
   title: string;
@@ -10,9 +10,11 @@ interface Props {
 }
 
 const { title, description, page, slug, pubDate } = Astro.props;
+const { name } = PERSONAL_INFO;
+const { linkedin, github } = PERSONAL_INFO.letsConnect.socialMedias;
 const image =
   page === "travel"
-    ? `${Astro.url.origin}/globe_preview.webp"`
+    ? `${Astro.url.origin}/globe_preview.webp`
     : `${Astro.url.origin}/og-image.png`;
 
 const schema =
@@ -20,9 +22,9 @@ const schema =
     ? {
         "@context": "http://schema.org",
         "@type": "Person",
-        name: "Gianmarco",
+        name: `${name}`,
         url: Astro.url.origin,
-        sameAs: [LINKS.linkedin, LINKS.github],
+        sameAs: [linkedin.url, github.url],
         image: `${Astro.url.origin}/og-image.png`,
         jobTitle: "Freelance Frontend Developer",
         worksFor: {
@@ -51,13 +53,13 @@ const schema =
         image: `${Astro.url.origin}/og-image.png`, //TODO: dynamic
         author: {
           "@type": "Person",
-          name: "Gianmarco",
+          name: `${name}`,
           url: Astro.url.origin,
-          sameAs: [LINKS.linkedin, LINKS.github],
+          sameAs: [linkedin.url, github.url],
         },
         publisher: {
           "@type": "Organization",
-          name: "Gianmarco",
+          name: `${name}`,
           logo: {
             "@type": "ImageObject",
             url: `${Astro.url.origin}/og-image.png`,

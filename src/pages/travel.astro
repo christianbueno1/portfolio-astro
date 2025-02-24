@@ -1,6 +1,9 @@
 ---
 import Globe from "../components/Globe";
 import BasicLayout from "../layouts/BasicLayout.astro";
+import { PERSONAL_INFO } from "../data";
+
+const { name } = PERSONAL_INFO;
 ---
 
 <script>
@@ -18,8 +21,8 @@ import BasicLayout from "../layouts/BasicLayout.astro";
 </script>
 
 <BasicLayout
-  title="Gianmarco Cavallo - Visited Countries"
-  description="A 3d globe showing countries that I have visited so far"
+  title=`${name} - Travel`
+  description="A 3d globe showing countries that I would like to visit later"
   page="travel"
 >
   <a

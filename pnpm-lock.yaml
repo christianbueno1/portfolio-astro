@@ -59,6 +59,9 @@ importers:
       reading-time:
         specifier: ^1.5.0
         version: 1.5.0
+      remark-code-titles:
+        specifier: ^0.1.2
+        version: 0.1.2
       solid-js:
         specifier: ^1.9.2
         version: 1.9.2
@@ -2731,6 +2734,9 @@ packages:
   rehype@13.0.2:
     resolution: {integrity: sha512-j31mdaRFrwFRUIlxGeuPXXKWQxet52RBQRvCmzl5eCefn/KGbomK5GMHNMsOJf55fgo3qw5tST5neDuarDYR2A==}
 
+  remark-code-titles@0.1.2:
+    resolution: {integrity: sha512-KsHQbaI4FX8Ozxqk7YErxwmBiveUqloKuVqyPG2YPLHojpgomodWgRfG4B+bOtmn/5bfJ8khw4rR0lvgVFl2Uw==}
+
   remark-gfm@4.0.0:
     resolution: {integrity: sha512-U92vJgBPkbw4Zfu/IiW2oTZLSL3Zpv+uI7My2eq8JxKgqraFdU8YUGicEJCEgSbeaG+QDFqIcwwfMTOEelPxuA==}
 
@@ -3021,6 +3027,9 @@ packages:
   unist-util-find-after@5.0.0:
     resolution: {integrity: sha512-amQa0Ep2m6hE2g72AugUItjbuM8X8cGQnFoHk0pGfrFeT9GZhzN5SW8nRsiGKK7Aif4CrACPENkA6P/Lw6fHGQ==}
 
+  unist-util-is@3.0.0:
+    resolution: {integrity: sha512-sVZZX3+kspVNmLWBPAB6r+7D9ZgAFPNWm66f7YNb420RlQSbn+n8rG8dGZSkrER7ZIXGQYNm5pqC3v3HopH24A==}
+
   unist-util-is@6.0.0:
     resolution: {integrity: sha512-2qCTHimwdxLfz+YzdGfkqNlH0tLi9xjTnHddPmJwtIG9MGsdbutfTc4P+haPD7l7Cjxf/WZj+we5qfVPvvxfYw==}
 
@@ -3039,8 +3048,14 @@ packages:
   unist-util-visit-children@3.0.0:
     resolution: {integrity: sha512-RgmdTfSBOg04sdPcpTSD1jzoNBjt9a80/ZCzp5cI9n1qPzLZWF9YdvWGN2zmTumP1HWhXKdUWexjy/Wy/lJ7tA==}
 
+  unist-util-visit-parents@2.1.2:
+    resolution: {integrity: sha512-DyN5vD4NE3aSeB+PXYNKxzGsfocxp6asDc2XXE3b0ekO2BaRUpBicbbUygfSvYfUz1IkmjFR1YF7dPklraMZ2g==}
+
   unist-util-visit-parents@6.0.1:
     resolution: {integrity: sha512-L/PqWzfTP9lzzEa6CKs0k2nARxTdZduw3zyh8d2NVBnsyvHjSX4TWse388YrrQKbvI8w20fGjGlhgT96WwKykw==}
+
+  unist-util-visit@1.4.1:
+    resolution: {integrity: sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==}
 
   unist-util-visit@5.0.0:
     resolution: {integrity: sha512-MR04uvD+07cwl/yhVuVWAtw+3GOR/knlL55Nd/wAdblk27GCVt3lqpTivy/tkJcZoNPzTwS1Y+KMojlLDhoTzg==}
@@ -4163,25 +4178,25 @@ snapshots:
 
   '@sinclair/typebox@0.27.8': {}
 
-  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.5(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1))':
+  '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.5(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1)))(svelte@5.15.0)(vite@6.0.5(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1))
       debug: 4.4.0
       svelte: 5.15.0
-      vite: 6.0.7(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1)
+      vite: 6.0.5(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1)
     transitivePeerDependencies:
       - supports-color
 
   '@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.7(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.5(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1)))(svelte@5.15.0)(vite@6.0.7(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1))
+      '@sveltejs/vite-plugin-svelte-inspector': 4.0.1(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.15.0)(vite@6.0.5(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1)))(svelte@5.15.0)(vite@6.0.5(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1))
       debug: 4.4.0
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.17
       svelte: 5.15.0
       vite: 6.0.7(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1)
-      vitefu: 1.0.4(vite@6.0.7(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1))
+      vitefu: 1.0.4(vite@6.0.5(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1))
     transitivePeerDependencies:
       - supports-color
 
@@ -6368,6 +6383,10 @@ snapshots:
       rehype-stringify: 10.0.1
       unified: 11.0.5
 
+  remark-code-titles@0.1.2:
+    dependencies:
+      unist-util-visit: 1.4.1
+
   remark-gfm@4.0.0:
     dependencies:
       '@types/mdast': 4.0.4
@@ -6763,6 +6782,8 @@ snapshots:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.0
 
+  unist-util-is@3.0.0: {}
+
   unist-util-is@6.0.0:
     dependencies:
       '@types/unist': 3.0.3
@@ -6789,10 +6810,18 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
+  unist-util-visit-parents@2.1.2:
+    dependencies:
+      unist-util-is: 3.0.0
+
   unist-util-visit-parents@6.0.1:
     dependencies:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.0
+
+  unist-util-visit@1.4.1:
+    dependencies:
+      unist-util-visit-parents: 2.1.2
 
   unist-util-visit@5.0.0:
     dependencies:
@@ -6900,6 +6929,10 @@ snapshots:
       fsevents: 2.3.3
       jiti: 2.4.2
       tsx: 4.19.1
+
+  vitefu@1.0.4(vite@6.0.5(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1)):
+    optionalDependencies:
+      vite: 6.0.5(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1)
 
   vitefu@1.0.4(vite@6.0.7(@types/node@22.7.6)(jiti@2.4.2)(tsx@4.19.1)):
     optionalDependencies:

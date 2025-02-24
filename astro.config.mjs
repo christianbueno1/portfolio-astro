@@ -7,18 +7,19 @@ import icon from "astro-icon";
 
 import solidJs from "@astrojs/solid-js";
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs";
+import remarkCodeTitles from 'remark-code-titles';
 
 import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gianmarcocavallo.com/",
+  site: "https://christianbueno.me/",
   integrations: [
     sitemap(),
     robotsTxt({
       sitemap: [
-        "https://gianmarcocavallo.com/sitemap-index.xml",
-        "https://gianmarcocavallo.com/sitemap-0.xml",
+        "https://christianbueno.me/sitemap-index.xml",
+        "https://christianbueno.me/sitemap-0.xml",
       ],
     }),
     solidJs(),
@@ -27,7 +28,13 @@ export default defineConfig({
     svelte(),
   ],
   markdown: {
-    remarkPlugins: [remarkReadingTime],
+    syntaxHighlight: "shiki", // Explicitly enable Shiki
+    // syntaxHighlight: "prism", // Explicitly enable Prism
+    // syntaxHighlight: false, // Turns off Shiki
+    shikiConfig: {
+      theme: "github-dark", // Change the theme (options: 'github-dark', 'dracula', 'nord', etc.)
+    },
+    remarkPlugins: [remarkReadingTime, remarkCodeTitles],
   },
   // output: "server",
   // adapter: netlify({ edgeMiddleware: true }),

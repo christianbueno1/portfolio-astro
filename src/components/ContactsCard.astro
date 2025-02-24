@@ -1,34 +1,38 @@
 ---
 import Card from "./Card/index.astro";
-import { LINKS } from "../lib/constants";
+import { PERSONAL_INFO } from "../data";
+
+const { contact, location } = PERSONAL_INFO;
+const { cta, socialMedias } = PERSONAL_INFO.letsConnect
+const { linkedin, github, devto, hashnode } = socialMedias;
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
   <div class="h-full">
     <header class="flex items-center">
       <h1 class="text-white text-xl font-bold">
-        Let's start working together!
+        {cta}
       </h1>
     </header>
     <address class="flex flex-col mt-4">
       <h2 class="text-gray-500">Contact Details</h2>
-      <p>hola@christianbueno.me</p>
-      <p>Ecuador</p>
+      <p><a class="hover:text-neutral-400" href={`mailto:${contact.email}`}>{contact.email}</a></p>
+      <p>{location.country}</p>
     </address>
     <div class="flex flex-col mt-4 w-fit">
       <h2 class="text-gray-500">Socials</h2>
       <ul>
         <li>
-          <a href={LINKS.linkedin} target="_blank">Linkedin</a>
+          <a class="hover:text-neutral-400" href={`${linkedin.url}`} target="_blank">{linkedin.name}</a>
         </li>
         <li>
-          <a href={LINKS.github} target="_blank">Github</a>
+          <a class="hover:text-neutral-400" href={`${github.url}`} target="_blank">{github.name}</a>
         </li>
         <li>
-          <a href={LINKS.devto} target="_blank">DEV Community</a>
+          <a class="hover:text-neutral-400" href={`${devto.url}`} target="_blank">{devto.name}</a>
         </li>
         <li>
-          <a href={LINKS.hashnode} target="_blank">Hashnode</a>
+          <a class="hover:text-neutral-400" href={`${hashnode.url}`} target="_blank">{hashnode.name}</a>
         </li>
       </ul>
     </div>

@@ -1,17 +1,20 @@
 ---
 import Card from "./Card/index.astro";
+import { PERSONAL_INFO } from "../data";
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title="About me">
+<Card 
+  colSpan="md:col-span-1" 
+  rowSpan="md:row-span-6" 
+  title="About me"
+  href="/about-me"
+>
   <div class="flex flex-col gap-2">
     <p class="text-sm font-light">
-      I'm Christian Bueno, a passionate Web Developer from Ecuador specializing in Python, JavaScript, and TypeScript. I have experience in developing dynamic web applications, including a sales management tool and a bus tracking system.
+      {PERSONAL_INFO.whoYouAre.shortIntroduction}
     </p>
     <p class="text-sm font-light">
-      My technical skills include frameworks like React, Next.js, and FastAPI, as well as DevOps tools such as Terraform and Jenkins. I’m also interested in cloud engineering, working with platforms like AWS and DigitalOcean.
-    </p>
-    <p class="text-sm font-light">
-      In my free time, I enjoy swimming, traveling, and learning about new technologies. My goal is to leverage technology to benefit businesses and society. Feel free to connect if you'd like to discuss a project!
+      {PERSONAL_INFO.whoYouAre.background}
     </p>
   </div>
 </Card>

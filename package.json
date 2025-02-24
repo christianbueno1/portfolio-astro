@@ -27,6 +27,7 @@
     "mdast-util-to-string": "^4.0.0",
     "motion": "^10.18.0",
     "reading-time": "^1.5.0",
+    "remark-code-titles": "^0.1.2",
     "solid-js": "^1.9.2",
     "svelte": "^5.15.0"
   },

@@ -2,49 +2,37 @@
 import Card from "./Card/index.astro";
 import Button from "./Button.astro";
 import { LINKS } from "../lib/constants";
+import { capitalizeFirstLetter } from "../lib/helpers";
 import { Icon } from 'astro-icon/components'
 import Tooltip from "./Tooltip/index";
 import { Image } from "astro:assets";
+import { WELCOME, PERSONAL_INFO } from "../data";
+import type { SocialMediaKey } from "../data";
+
+const socialMediaKey: SocialMediaKey[] = ["github", "linkedin", "instagram", "whatsapp"];
+const socialMedias = socialMediaKey.map((key) => PERSONAL_INFO.letsConnect.socialMedias?.[key]).filter(Boolean);
 ---
 
 <Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
   <div class="flex w-full h-full">
     <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
       <div class="flex flex-col h-full">
-        <h6 class="text-sm font-light m-0 text-gray-500">welcome</h6>
-        <p class="m-0 font-light text-xl">
-          Welcome to my portfolio! I’m thrilled to have you here. This space showcases my work as a <b class="font-bold">Web Developer</b>, where I create dynamic and user-friendly web applications. 
+        <h6 class="text-sm font-light m-0 text-gray-500">{WELCOME.title}</h6>
+        <p class="m-0 font-light text-xl" set:html={WELCOME.p1}>
         </p>
         <p class="m-0 font-light text-xl">
-          Feel free to explore my projects and see how technology can transform ideas into reality. If you’re interested in collaborating or have any questions, don’t hesitate to reach out!
+          {WELCOME.p2}
         </p>
       </div>
       <div class="flex gap-4">
-        <a href={LINKS.github} aria-label="github profile" target="_blank">
-          <Button aria-label="github profile">
-            <Icon name="ri:github-fill" class="h-6" />
-            <span class="sr-only">GitHub Profile</span>
-          </Button>
-        </a>
-        <a href={LINKS.linkedin} aria-label="linkedin profile" target="_blank">
-          <Button aria-label="linkedin profile">
-            <Icon name="ri:linkedin-box-fill" class="h-6" />
-            <span class="sr-only">Linkedin Profile</span>
-          </Button>
-        </a>
-        <a href={LINKS.instagram} aria-label="instagram profile" target="_blank">
-          <Button aria-label="instagram profile">
-            <Icon name="ri:instagram-line" class="h-6" />
-            <span class="sr-only">Instagram Profile</span>
-          </Button>
-        </a>
-        <a href={LINKS.whatsapp} aria-label="whatsapp profile" target="_blank">
-          <Button aria-label="whatsapp profile">
-            <Icon name="ri:whatsapp-line" class="h-6" />
-            <span class="sr-only">Whatsapp Profile</span>
-          </Button>
-        </a>
-        
+        {socialMedias.map((link) => (
+          <a href={link.url} aria-label={link.name + " profile"} target="_blank">
+            <Button aria-label={link.name + " profile"}>
+              <Icon name={link.icon} class="h-6" />
+              <span class="sr-only">{link.name} Profile</span>
+            </Button>
+          </a>
+        ))}
       </div>
     </div>
     <Image
@@ -52,7 +40,7 @@ import { Image } from "astro:assets";
       height="300"
       src="/me.webp"
       class="w-auto max-h-[300px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
-      alt="memoji of gianmarco"
+      alt="memoji of christian"
     />
   </div>
 </Card>

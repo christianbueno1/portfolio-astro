@@ -11,14 +11,17 @@ export async function getStaticPaths() {
   }));
 }
 
+// Get the id from the URL parameters
 const { id } = Astro.params;
 
 if (!id) {
   throw new Error("id is missing");
 }
 
+// Fetch the blog entry
 const entry = await getEntry("blog", id);
 
+// Error handling
 if (!entry) {
   return Astro.redirect("/404");
 }
@@ -32,7 +35,7 @@ console.log("headings", entry, id);
   url={`blog/${entry.id}`}
   minutesRead={remarkPluginFrontmatter.minutesRead}
   pubDate={entry.data.pubDate!}
-  title={`${entry.data.title} | Gianmarco Cavallo`}
+  title={`${entry.data.title}`}
   description={entry.data.description!}
 >
   <Content />
@@ -91,6 +94,7 @@ console.log("headings", entry, id);
   ol {
     margin-left: 20px;
     margin-bottom: 10px;
+    list-style: decimal;
   }
 
   blockquote {
@@ -102,7 +106,7 @@ console.log("headings", entry, id);
   pre,
   code {
     font-family: "Courier New", monospace;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
     border-radius: 5px;
   }
 
@@ -115,6 +119,7 @@ console.log("headings", entry, id);
     padding: 2px 4px;
     font-size: 90%;
     color: #d63384;
+    /* color: #8CC0F8; */
   }
 
   img {
@@ -133,4 +138,25 @@ console.log("headings", entry, id);
     padding: 8px;
     border-bottom: 1px solid #ddd;
   }
+
+  /* Add to your global styles */
+  .remark-code-title {
+    background-color: #1f2937;
+    color: #e5e7eb;
+    padding: 0.5rem 1rem;
+    font-family: monospace;
+    font-size: 0.875rem;
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+    border-bottom: 1px solid #374151;
+  }
+
+  .remark-code-title + pre {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  
+
 </style>
