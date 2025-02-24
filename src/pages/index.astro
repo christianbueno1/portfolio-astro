@@ -10,6 +10,7 @@ import Globe from "../components/Globe";
 import { getCollection } from "astro:content";
 import { formatDate } from "../lib/helpers";
 import { BIO_INFO, PERSONAL_INFO } from "../data";
+import { SHORT_SITE_DESCRIPTION } from "../data";
 
 const posts = (await getCollection("blog"))?.sort(
   (blogEntryA, blogEntryB) =>
@@ -41,7 +42,7 @@ const posts = (await getCollection("blog"))?.sort(
 </script>
 
 <Layout
-  title={PERSONAL_INFO.title}
+  title={SHORT_SITE_DESCRIPTION}
   description={BIO_INFO.short}
 >
   <main
