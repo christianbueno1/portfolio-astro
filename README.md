@@ -86,3 +86,10 @@ or
 ## Authors ❤️
 
 - Christian Bueno - https://github.com/christianbueno1
+
+## podman
+```bash
+podman pod create --name portfolio-astro-pod -p 4322:80
+
+podman pull docker.io/christianbueno1/personal-portfolio-astro:latest && podman pod stop portfolio-astro-pod && podman pod rm portfolio-astro-pod && podman pod create --name portfolio-astro-pod -p 4322:80 && podman run -d --pod portfolio-astro-pod --name portfolio-astro docker.io/christianbueno1/personal-portfolio-astro:latest
+```
